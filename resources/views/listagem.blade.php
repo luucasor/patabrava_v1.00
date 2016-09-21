@@ -13,6 +13,7 @@
       <td>Preco Venda</td>
       <td>Quantidade</td>
       <td/>
+      <td/>
     </tr>
     @foreach ($produtos as $produto)
     <tr class=" {{ $produto->quantidade <=2 ? 'danger' : '' }} ">
@@ -26,6 +27,9 @@
       <td align="center"> {{$produto->quantidade}} </td>
       <td>
         <a href="/produtos/mostra/{{$produto->id}}"><span class="glyphicon glyphicon-search"></span></a>
+      </td>
+      <td>
+        <a href="/produtos/remove/{{$produto->id}}"><span class="glyphicon glyphicon-trash"></span></a>
       </td>
     </tr>
     @endforeach

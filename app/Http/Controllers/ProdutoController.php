@@ -4,6 +4,7 @@ namespace patabrava\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Request;
 use patabrava\Produto;
+use patabrava\Http\Requests\ProdutoRequest;
 
 class ProdutoController extends Controller {
 
@@ -12,8 +13,7 @@ class ProdutoController extends Controller {
     return view('listagem')->with('produtos', $produtos);
   }
 
-  public function mostra(){
-    $id = Request::route('id');
+  public function mostra($id){
     $produto = Produto::find($id);
     return view('detalhes')->with('produto', $produto);
   }
@@ -22,25 +22,15 @@ class ProdutoController extends Controller {
     return view('formulario');
   }
 
-  public function adiciona(){
-    $referencia = Request::input('referencia');
-    $descricao = Request::input('descricao');
-    $medida = Request::input('medida');
-    $peso = Request::input('peso');
-    $preco_compra = Request::input('preco_compra');
-    $preco_venda = Request::input('preco_venda');
-    $quantidade = Request::input('quantidade');
-    $categoria = Request::input('categoria');
-    $imagem1 = Request::input('imagem1');
-    $imagem2 = Request::input('imagem2');
-    $imagem3 = Request::input('imagem3');
+  public function adiciona(ProdutoRequest $request){
+    Produto::create($request->all());
+    return redirect('/produtos')->withInput(Request::except("pass"));
+  }
 
-    DB::insert("INSERT INTO produto(referencia, descricao, medida, peso, preco_compra,
-                                    preco_venda, quantidade, id_categoria, imagem1, imagem2, imagem3)
-    VALUES (?,?,?,?,?,?,?,?,?,?,?)", array($referencia, $descricao, $medida, $peso, $preco_compra,
-                                    $preco_venda, $quantidade, $categoria, $imagem1, $imagem2, $imagem3));
-
-    return redirect('/produtos')->withInput();
+  public function remove($id){
+    $produto = Produto::find($id);
+    $produto->delete();
+    return redirect()->action('ProdutoController@lista');
   }
 }
 ?>

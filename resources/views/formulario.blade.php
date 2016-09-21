@@ -1,6 +1,16 @@
 @extends('principal')
 
 @section('conteudo')
+
+@if(!empty($errors->all()))
+<div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $error)
+    <li>{{$error}}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <form class="form" action="/produtos/adiciona" method="post">
 
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -65,7 +75,8 @@
 
 @if(old('descricao'))
   <div class="alert alert-success">
-    Produto {{ old('descricao') }} adicionado com sucesso!!
+    <strong>Sucesso!</strong>
+        O produto {{ old('descricao') }} foi adicionado.
   </div>
 @endif
 
