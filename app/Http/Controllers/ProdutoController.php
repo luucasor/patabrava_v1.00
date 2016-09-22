@@ -4,10 +4,17 @@ namespace patabrava\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Request;
 use patabrava\Produto;
+use patabrava\Categoria;
 use patabrava\Http\Requests\ProdutoRequest;
+use Auth;
 
 class ProdutoController extends Controller {
 
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+  
   public function lista(){
     $produtos = Produto::all();
     return view('listagem')->with('produtos', $produtos);
@@ -19,7 +26,7 @@ class ProdutoController extends Controller {
   }
 
   public function novo(){
-    return view('formulario');
+    return view('formulario')->with('categorias', Categoria::all());
   }
 
   public function adiciona(ProdutoRequest $request){

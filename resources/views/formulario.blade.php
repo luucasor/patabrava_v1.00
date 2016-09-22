@@ -2,13 +2,13 @@
 
 @section('conteudo')
 
-@if(!empty($errors->all()))
+@if(count($errors)>0)
 <div class="alert alert-danger">
-  <ul>
-    @foreach($errors->all() as $error)
+<ul>
+@foreach($errors->all() as $error)
     <li>{{$error}}</li>
-    @endforeach
-  </ul>
+@endforeach
+</ul>
 </div>
 @endif
 <form class="form" action="/produtos/adiciona" method="post">
@@ -52,7 +52,11 @@
 
   <div class="form-group">
     <label>Categoria</label>
-    <input name="categoria" class="form-control"/>
+    <select name="categoria_id" class="form-control">
+        @foreach($categorias as $categoria)
+          <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+        @endforeach
+    </select>
   </div>
 
   <div class="form-group">
@@ -72,12 +76,5 @@
 
   <button class="btn btn-primary" type="submit">Adicionar</button>
 </form>
-
-@if(old('descricao'))
-  <div class="alert alert-success">
-    <strong>Sucesso!</strong>
-        O produto {{ old('descricao') }} foi adicionado.
-  </div>
-@endif
 
 @stop

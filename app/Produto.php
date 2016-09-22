@@ -10,5 +10,9 @@ class Produto extends Model
     public $timestamps = false;
     protected $fillable =
         array('referencia', 'descricao', 'medida', 'peso', 'preco_compra', 'preco_venda', 'quantidade',
-              'id_categoria', 'imagem1', 'imagem2', 'imagem3');
+              'categoria_id', 'imagem1', 'imagem2', 'imagem3');
+
+    public function categoria(){
+      return $this->belongsTo('patabrava\Categoria');
+    }
 }

@@ -1,16 +1,22 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use patabrava\Categoria;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call(CategoriaTableSeeder::class);
+    }
+}
+
+class CategoriaTableSeeder extends Seeder {
+    public function run()
+    {
+        Categoria::create(['nome' => 'ANÉL']);
+        Categoria::create(['nome' => 'BRINCO']);
+        Categoria::create(['nome' => 'COLAR']);
+        Categoria::create(['nome' => 'PULSEIRA']);
     }
 }
