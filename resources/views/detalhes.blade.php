@@ -1,5 +1,7 @@
-@extends('principal')
+@extends('layouts.app')
 
-@section('conteudo')
-<h1>Detalhes do produto {{$produto->descricao}}</h1>
+@section('content')
+<div class="container">
+  <h1>Detalhes do produto {{$produto->descricao}}</h1>
+</div>
 @stop

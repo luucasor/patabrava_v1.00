@@ -11,9 +11,11 @@
     <title>{{ config('app.name', 'PataBrava') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Scripts -->
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-filestyle.min.js"> </script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -33,7 +35,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <!-- Branding Image -->
+                <!-- Branding Image-->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'PataBrava') }}
                 </a>
@@ -42,7 +44,36 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Cadastros
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/produtos/novo">Produtos</a></li>
+                      <li><a href="/categorias">Categorias</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Consultas
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/produtos">Produtos</a></li>
+                      <li><a href="/categorias">Categorias</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Controle Estoque
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#entrada">Entrada</a></li>
+                      <li><a href="#saida">Saída</a></li>
+                    </ul>
+                  </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -80,6 +111,5 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
 </body>
 </html>
