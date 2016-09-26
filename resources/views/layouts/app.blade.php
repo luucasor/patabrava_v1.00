@@ -21,8 +21,8 @@
         ]); ?>
     </script>
 </head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
+<body style="padding-top: 70px;">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
 
