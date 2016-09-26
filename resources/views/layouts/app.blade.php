@@ -11,11 +11,10 @@
     <title>{{ config('app.name', 'PataBrava') }}</title>
 
     <!-- Styles -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Scripts -->
-    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap-filestyle.min.js"> </script>
+    <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -111,5 +110,8 @@
     @yield('content')
 
     <!-- Scripts -->
+    <script src="/js/app.js"></script>
+
+
 </body>
 </html>

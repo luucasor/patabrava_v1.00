@@ -14,7 +14,7 @@ class ProdutoController extends Controller {
   {
       $this->middleware('auth');
   }
-  
+
   public function lista(){
     $produtos = Produto::all();
     return view('listagem')->with('produtos', $produtos);
