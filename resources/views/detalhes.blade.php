@@ -12,8 +12,15 @@
   <label>Quantidade: </label> {{$produto->quantidade}}<br />
   <label>Categoria: </label> {{$produto->categoria->nome}}<br />
 
-  <label>Imagem1: </label> {{$produto->categoria->imagem1}}&nbsp
-  <label>Imagem2: </label> {{$produto->categoria->imagem2}}&nbsp
-  <label>Imagem3: </label> {{$produto->categoria->imagem3}}
+  <figure>
+    <label>Imagem1: </label> {{$produto->imagem1}}&nbsp
+    <img src="\\\{{$produto->imagem1}}">
+  </figure>
+  <figure>
+    <label>Imagem2: </label> {{$produto->imagem2}}&nbsp
+  </figure>
+  <figure>
+    <label>Imagem3: </label> {{$produto->imagem3}}
+  </figure>
 </div>
 @stop
