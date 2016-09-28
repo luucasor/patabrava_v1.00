@@ -21,32 +21,33 @@
             <input id="filtro-nome" type="text" class="form-control" placeholder="Digite a referência ou nome do produto..." style="min-width:300px;">
           </div>
         </form>
-        <div class="table-responsive col-md-12 col-xs-12 col-sm-3">
-          <table class="table table-striped" id="lista">
+      </div>
+        <div class="col-md-12 col-xs-12 col-sm-3">
+          <table class="table table-responsive" id="lista">
             <thead>
               <tr class="indices">
                 <td>Referencia</td>
                 <td>Descricao</td>
-                <td>Categoria</td>
-                <td>Medida</td>
-                <td>Peso</td>
-                <td>Preço Compra</td>
-                <td>Preco Venda</td>
-                <td>Quantidade</td>
+                <td class="hidden-xs">Categoria</td>
+                <td class="hidden-xs">Medida</td>
+                <td class="hidden-xs">Peso</td>
+                <td class="hidden-xs">Preço Compra</td>
+                <td class="hidden-xs">Preco Venda</td>
+                <td class="hidden-xs">Quantidade</td>
                 <td colspan="3">Ações</td>
               </tr>
             </thead>
             <tbody>
               @foreach($produtos as $produto)
               <tr class="valores {{ $produto->quantidade <=2 ? 'danger' : '' }} ">
-                <td id="referencia"> {{$produto->referencia}} </td>
-                <td id="descricao"> {{$produto->descricao}} </td>
-                <td> {{$produto->categoria->nome}} </td>
-                <td> {{$produto->medida}} </td>
-                <td> {{$produto->peso}} </td>
-                <td> {{$produto->preco_compra}} </td>
-                <td> {{$produto->preco_venda}} </td>
-                <td> {{$produto->quantidade}} </td>
+                <td id="referencia">{{$produto->referencia}}</td>
+                <td id="descricao">{{$produto->descricao}}</td>
+                <td class="hidden-xs">{{$produto->categoria->nome}}</td>
+                <td class="hidden-xs">{{$produto->medida}}</td>
+                <td class="hidden-xs">{{$produto->peso}}</td>
+                <td class="hidden-xs">R$ {{$produto->preco_compra}}</td>
+                <td class="hidden-xs">R$ {{$produto->preco_venda}}</td>
+                <td class="hidden-xs">{{$produto->quantidade}}</td>
                 <td>
                   <a href="javascript:confirmar();"><span class="glyphicon glyphicon-trash"></span></a>
                 </td>
@@ -60,15 +61,6 @@
               @endforeach
             </tbody>
           </table>
-          <ul class = "pagination">
-            <li><a href = "#">&laquo;</a></li>
-            <li><a href = "#">1</a></li>
-            <li><a href = "#">2</a></li>
-            <li><a href = "#">3</a></li>
-            <li><a href = "#">4</a></li>
-            <li><a href = "#">5</a></li>
-            <li><a href = "#">&raquo;</a></li>
-          </ul>
       </div>
 
 
@@ -78,7 +70,6 @@
                 O produto '{{ old('descricao') }}' foi {{ old('tipo') }}.
           </div>
         @endif
-    </div>
   </div>
 </div>
 <script type="text/javascript">

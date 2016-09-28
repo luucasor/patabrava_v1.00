@@ -21,7 +21,7 @@
     <input type="hidden" name="tipo" value="alterado">
 
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="form-group thumbnail">
           <label>Imagem 1</label>
           <figure align="center">
@@ -29,10 +29,10 @@
             <button id="botao1" class="btn btn-default" type="button" onclick="clearFile('imagem1', 'img1')">Limpar Imagem</button>
           </figure>
         </div>
-          <input name="imagem1" id="imagem1" type="file" onchange="previewFile('#img1', '#imagem1')" value="{{$produto->imagem1}}"><br>
+        <input name="imagem1" id="imagem1" type="file" onchange="previewFile('#img1', '#imagem1')" value="{{$produto->imagem1}}"><br>
       </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="form-group thumbnail">
           <label>Imagem 2</label>
           <figure align="center">
@@ -43,7 +43,7 @@
         <input name="imagem2" id="imagem2" type="file" onchange="previewFile('#img2', '#imagem2')"><br>
       </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="form-group thumbnail">
           <label>Imagem 3</label>
           <figure align="center">
@@ -55,19 +55,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      &nbsp
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="form-group">
           <label>Referência</label>
           <input type="text" class="form-control input-md" tabindex="1" value="{{$produto->referencia}}" disabled="disabled">
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="form-group">
           <label>Medida</label>
           <input type="text" name="medida" id="medida" class="form-control input-md" tabindex="2" value="{{$produto->medida}}">
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="form-group">
           <label>Peso</label>
           <input type="text" name="peso" id="peso" class="form-control input-md" tabindex="3" value="{{$produto->peso}}">
@@ -76,7 +79,7 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-12">
+      <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
           <label>Descrição</label>
           <input type="text" name="descricao" id="descricao" class="form-control input-md" tabindex="4" value="{{$produto->descricao}}">
@@ -115,8 +118,23 @@
       </div>
     </div>
 
-      <button style="width: 10%;" class="btn btn-md btn-default" type="button" tabindex="9" onclick="voltar();">Voltar</button>&nbsp&nbsp
-      <button style="width: 10%;" class="btn btn-md btn-primary" type="submit" tabindex="10">Alterar</button>
+    <div class="form-group">
+      <table width="100%">
+        <tr>
+          <td>
+            &nbsp
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button style="width: 40%;" type="button" class="btn btn-default" onclick="voltar();" tabindex="9">Voltar</button>
+          </td>
+          <td align="right">
+            <button style="width: 40%;" type="submit" class="btn btn-primary" tabindex="10">Alterar</button>
+          </td>
+        </tr>
+      </table>
+    </div>
   </form>
 
 </div>
