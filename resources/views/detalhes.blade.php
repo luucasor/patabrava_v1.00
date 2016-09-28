@@ -40,5 +40,11 @@
         </td>
       </tr>
     </table>
+        <button style="width: 10%;" class="btn btn-md btn-default" type="button" tabindex="9" onclick="voltar();">Voltar</button>&nbsp&nbsp
 </div>
+<script type="text/javascript">
+function voltar(){
+  document.location = "/produtos";
+}
+</script>
 @stop

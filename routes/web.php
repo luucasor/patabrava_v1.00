@@ -18,6 +18,7 @@ Route::get('/home', 'HomeController@index');
 
 //Rotas para Produtos
 Route::get('/produtos', 'ProdutoController@lista');
+Route::get('/produtos/lista/filtro', 'ProdutoController@filtro');
 Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra');
 Route::get('/produtos/altera/{id}', 'ProdutoController@altera');
 Route::get('/produtos/remove/{id}', 'ProdutoController@remove');
