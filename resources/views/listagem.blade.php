@@ -62,16 +62,16 @@
             </tbody>
           </table>
       </div>
-
-
-        @if(old('descricao'))
-          <div class="alert alert-success">
-            <strong>Sucesso!</strong>
-                O produto '{{ old('descricao') }}' foi {{ old('tipo') }}.
-          </div>
-        @endif
   </div>
+
+  @if(old('descricao'))
+    <div class="alert alert-success">
+      <strong>Sucesso!</strong>
+          O produto '{{ old('descricao') }}' foi {{ old('tipo') }}.
+    </div>
+  @endif
 </div>
+
 <script type="text/javascript">
 
 function confirmar(){
@@ -97,15 +97,6 @@ jQuery('#filtro-nome').keyup(function() {
         jQuery(this).css('display', corresponde ? '' : 'none');
     });
 });
-
-
-
-
-
-
-
-
-
 
 </script>
 @stop
