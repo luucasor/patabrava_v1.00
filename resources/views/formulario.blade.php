@@ -11,8 +11,10 @@
 </div>
 @endif
 
+<div class="page-header text-left path">
+  <h4><b>Cadastro de produtos</b></h4>
+</div>
 <div class="container">
-
   <form enctype="multipart/form-data" action="/produtos/adiciona" method="post">
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">

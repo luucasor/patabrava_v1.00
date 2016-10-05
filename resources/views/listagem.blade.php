@@ -2,20 +2,12 @@
 
 @section('content')
 
-<style media="screen">
-.indices{
-  text-align: center;
-  font-weight: bold;
-}
-.valores{
-  text-align: center;
-}
-</style>
-
+<div class="page-header text-left path">
+  <h4><b>Listagem de produtos</b></h4>
+</div>
 <div class="container">
   <div class="row">
       <div class="col-md-12 col-xs-12 col-sm-3">
-        <h3>Listagem de produtos</h3>
         <form class="navbar-form navbar-right">
           <div class="form-group">
             <input id="filtro-nome" type="text" class="form-control" placeholder="Digite a referência ou nome do produto..." style="min-width:300px;">

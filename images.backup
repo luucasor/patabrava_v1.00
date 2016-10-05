@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-4">
+    <div class="form-group thumbnail">
+      <label>Imagem 1</label>
+      <figure align="center">
+        <img class="img-rounded imagem" name="img1" id="img1" src="/uploads/{{$produto->imagem1}}" alt="Prévia da imagem1...">
+      </figure>
+    </div>
+    <button id="botao1" class="btn btn-default" type="button" onclick="clearFile('imagem1', 'img1')">Limpar Imagem</button>
+    <input name="imagem1" id="imagem1" type="file" onchange="previewFile('#img1', '#imagem1')" value="{{$produto->imagem1}}"><br>
+  </div>
+
+  <div class="col-xs-12 col-sm-4 col-md-4">
+    <div class="form-group thumbnail">
+      <label>Imagem 2</label>
+      <figure align="center">
+        <img class="img-rounded imagem" name="img2" id="img2" src="/uploads/{{$produto->imagem2}}" alt="Prévia da imagem2...">
+        <button id="botao2" class="btn btn-default" type="button" onclick="clearFile('imagem2', 'img2')">Limpar Imagem</button>
+      </figure>
+    </div>
+    <input name="imagem2" id="imagem2" type="file" onchange="previewFile('#img2', '#imagem2')"><br>
+  </div>
+
+  <div class="col-xs-12 col-sm-4 col-md-4">
+    <div class="form-group thumbnail">
+      <label>Imagem 3</label>
+      <figure align="center">
+        <img class="img-rounded imagem" name="img3" id="img3" src="/uploads/{{$produto->imagem3}}" alt="Prévia da imagem3...">
+        <button id="botao3" class="btn btn-default" type="button" onclick="clearFile('imagem3', 'img3')">Limpar Imagem</button>
+      </figure>
+    </div>
+    <input name="imagem3" id="imagem3" type="file" onchange="previewFile('#img3', '#imagem3')"><br>
+  </div>
+</div>

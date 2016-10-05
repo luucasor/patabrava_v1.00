@@ -12,9 +12,10 @@
 
     <!-- Styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/meu.css" rel="stylesheet">
 
     <!-- Scripts -->
-    <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>  
+    <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
 
     <script>
         window.Laravel = <?php echo json_encode([
@@ -22,7 +23,7 @@
         ]); ?>
     </script>
 </head>
-<body style="padding-top: 70px;">
+<body>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -51,7 +52,7 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a href="/produtos/novo">Produtos</a></li>
-                      <li><a href="/categorias">Categorias</a></li>
+                      <li><a href="/categorias/nova">Categorias</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">

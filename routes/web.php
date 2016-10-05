@@ -26,3 +26,6 @@ Route::get('/produtos/novo', 'ProdutoController@novo');
 Route::post('/produtos/adiciona', 'ProdutoController@adiciona');
 Route::post('/produtos/atualiza', 'ProdutoController@atualiza');
 Route::post('/produtos/upload', 'ProdutoController@uploadFiles');
+
+Route::get('/categorias/', 'CategoriaController@lista');
+Route::get('/categoria', 'CategoriaController@altera');
